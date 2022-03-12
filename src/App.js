@@ -2,6 +2,7 @@ import {Navbar, Container, Nav } from 'react-bootstrap'
 import { Route, Routes, BrowserRouter as Router, Link } from 'react-router-dom';
 import './App.scss';
 import Portfolio from './Portfolio';
+
 import Home from './Home'
 
 
@@ -21,9 +22,10 @@ function Navigation() {
 
 function App() {
   return (
+  <div className='background'>
   <Router>
     <Navigation/>
-    <Container className='content'>
+    <Container fluid className='content'>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/home' element={<Home/>}></Route>
@@ -31,6 +33,7 @@ function App() {
       </Routes>
     </Container>
   </Router>
+  </div>
   );
 }
 

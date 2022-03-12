@@ -1,5 +1,4 @@
 import { Card, Row, Container, Col } from "react-bootstrap"
-import project1 from "./res/project1.jpg"
 import './Portfolio.scss'
 
 function Project({title, body, link}) {
