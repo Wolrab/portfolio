@@ -22,18 +22,18 @@ function Navigation() {
 
 function App() {
   return (
-  <div className='background'>
   <Router>
     <Navigation/>
-    <Container fluid className='content'>
+  <div className='background'>
+    <Container className='content'>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/portfolio' element={<Portfolio/>}></Route>
       </Routes>
     </Container>
-  </Router>
   </div>
+  </Router>
   );
 }
 

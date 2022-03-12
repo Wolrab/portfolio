@@ -3,12 +3,13 @@
 .background {
     background-image: url(res/project1.jpg);
     background-position: top right;
-    height: 100vh
+    height: 100vh;
+    display: flex;
 }
 
 .content {
     background: rgba(white, 0.8);
-    margin: 10px;
+    margin: auto;
     padding: 10px 10px 5px;
     // align-self: center;
 }
