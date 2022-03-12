@@ -1,4 +1,6 @@
-import { Card, Row, Container, Col } from "react-bootstrap"
+import { useState } from 'react'
+import { Button, Card, Row, Container, Col, Modal, Stack } from "react-bootstrap"
+import { Document, Page, pdfjs} from "react-pdf"
 import './Portfolio.scss'
 
 function Project({title, body, link}) {
@@ -13,10 +15,8 @@ function Project({title, body, link}) {
     )
 }
 
-function Portfolio() {
-    const xs=6
-    const m=6
-    const l=6
+function ProjectDisplay() {
+    const {xs, m, l} = {xs: 6, m: 6, l: 6}
 
     return (
     <Container className='project-container'>
@@ -56,6 +56,61 @@ function Portfolio() {
         </Col>
     </Row>
     </Container>
+    )
+}
+
+function ResumeDisplay({resumePath}) {
+    pdfjs.GlobalWorkerOptions.workerSrc = 
+    `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+    const [page, setPage] = useState(null)
+    const [show, setShow] = useState(false)
+    
+    const showResume = () => setShow(true)
+    const hideResume = () => setShow(false)
+    
+    const documentLoadSuccess = ({pages}) => {
+        setPage(1)
+    }
+
+    const documentLoadError = (error) => {
+        // TODO: Show dialog
+    }
+
+    return (
+    <>
+      <Stack direction="horizontal" gap={2}>
+        <Button variant="primary" onClick={showResume} className='ms-auto'>
+        Show
+        </Button>
+        <a href="/Developer_Resume.pdf">Download</a>
+        <div className='ms-auto'/>
+      </Stack>
+      
+      <Modal show={show} onHide={hideResume} size='lg'>
+        <Modal.Header closeButton>
+          <Modal.Title>Developer Resume 2022</Modal.Title>
+        </Modal.Header>
+        <Modal.Body align="center">
+          <Document 
+              file={resumePath} 
+              onLoadSuccess={documentLoadSuccess}
+              onLoadError={documentLoadError}>
+            <Page pageNumber={page} width={700}/>
+          </Document>
+        </Modal.Body>
+      </Modal>
+    </>
+    )
+}
+
+function Portfolio() {
+    return (
+    <>
+      <h2 align="center">Projects</h2>
+      <ProjectDisplay/>
+      <h2 align="center">Resume</h2>
+      <ResumeDisplay resumePath="./Developer_Resume.pdf"/>
+    </>
     )
 }
 
