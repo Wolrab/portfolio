@@ -1,16 +1,22 @@
 .project-container {
-    padding-top: 1em; 
+    padding-top: 0.25em;
+    padding-bottom: 1em;
 }
 
 .row {
     padding-bottom: 1rem
 }
 
-.card {
-    background-color: #aaaaaa;
+.card-title {
+  border-bottom: 2px;
+  border-bottom-style: solid;
+  border-bottom-color:rgb(185, 185, 185);
+
+  padding:5px;
+  
+  text-align: center;
 }
 
-.card-title {
-    padding-top:4px;
-    text-align: center;
+.card-body {
+  padding-top:5px;
 }

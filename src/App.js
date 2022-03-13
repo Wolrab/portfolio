@@ -33,6 +33,10 @@ function App() {
       </Routes>
     </Container>
   </div>
+
+  <footer className='bg-dark text-white'>
+    <div>Background Image: svetlana57 <a href="https://www.istockphoto.com/portfolio/svetlana57?mediatype=photography">link</a></div>
+  </footer>
   </Router>
   );
 }

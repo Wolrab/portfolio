@@ -19,7 +19,7 @@ function ProjectDisplay() {
     const {xs, m, l} = {xs: 6, m: 6, l: 6}
 
     return (
-    <Container className='project-container'>
+    <>
     <Row>
         <Col xs={xs} m={m} l={l}>
             <Project 
@@ -55,7 +55,7 @@ function ProjectDisplay() {
                 link="https://github.com/Wolrab/Fluke-Net"/>
         </Col>
     </Row>
-    </Container>
+    </>
     )
 }
 
@@ -85,8 +85,8 @@ function ResumeDisplay({resumePath}) {
         <a href="/Developer_Resume.pdf">Download</a>
         <div className='ms-auto'/>
       </Stack>
-      
-      <Modal show={show} onHide={hideResume} size='lg'>
+
+      <Modal show={show} onHide={hideResume} size='lg' fullscreen='lg-down'>
         <Modal.Header closeButton>
           <Modal.Title>Developer Resume 2022</Modal.Title>
         </Modal.Header>
@@ -105,12 +105,12 @@ function ResumeDisplay({resumePath}) {
 
 function Portfolio() {
     return (
-    <>
+    <div className='project-container'>
       <h2 align="center">Projects</h2>
       <ProjectDisplay/>
       <h2 align="center">Resume</h2>
       <ResumeDisplay resumePath="./Developer_Resume.pdf"/>
-    </>
+    </div>
     )
 }
 
