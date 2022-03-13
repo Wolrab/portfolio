@@ -78,13 +78,12 @@ function ResumeDisplay({resumePath}) {
 
     return (
     <>
-      <Stack direction="horizontal" gap={2}>
-        <Button variant="primary" onClick={showResume} className='ms-auto'>
+      <div className='text-center'>
+        <Button variant="primary" onClick={showResume} className='ms-auto me-3'>
         Show
         </Button>
         <a href="/Developer_Resume.pdf">Download</a>
-        <div className='ms-auto'/>
-      </Stack>
+      </div>
 
       <Modal show={show} onHide={hideResume} size='lg' fullscreen='lg-down'>
         <Modal.Header closeButton>
