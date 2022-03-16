@@ -16,12 +16,12 @@ function Project({title, body, link}) {
 }
 
 function ProjectDisplay() {
-    const {xs, m, l} = {xs: 6, m: 6, l: 6}
+    const breakpoints = {s:12, m:6}
 
     return (
     <>
     <Row>
-        <Col xs={xs} m={m} l={l}>
+        <Col {...breakpoints}>
             <Project 
                 title="This website!"
                 body="Personal webpage made from a combination of react and 
@@ -29,7 +29,7 @@ function ProjectDisplay() {
                 link="https://github.com/Wolrab/portfolio"/>
         </Col>
         
-        <Col xs={xs} m={m} l={l}>
+        <Col {...breakpoints}>
             <Project 
                 title="Tex2Speech"
                 body="Senior project for college. A speech synthesis application
@@ -38,7 +38,7 @@ function ProjectDisplay() {
         </Col>
     </Row>
     <Row>
-        <Col xs={xs} m={m} l={l}>
+        <Col {...breakpoints}>
             <Project 
                 title="Android Satellite Viewer"
                 body="An app which tracks the position of the globe's satellites in
@@ -46,7 +46,7 @@ function ProjectDisplay() {
                 link="https://github.com/Wolrab/night-sky-satellite-viewer"/>
         </Col>
 
-        <Col xs={xs} m={m} l={l}>
+        <Col {...breakpoints}>
             <Project 
                 title="Fluke-Net"
                 body="A neural network which identifies individual whale tails given noisy

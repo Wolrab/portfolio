@@ -1,13 +1,14 @@
 import {Navbar, Container, Nav, Stack} from 'react-bootstrap'
 import { Route, Routes, BrowserRouter as Router, Link } from 'react-router-dom';
-import './App.scss';
+
 import Portfolio from './Portfolio';
 import Home from './Home'
 
+import './App.scss';
 
 function Navigation() {
   return (
-  <Navbar bg="dark" variant="dark">
+  <Navbar bg="dark" variant="dark" className='sticky-top'>
     <Container>
       <Navbar.Brand href='/home'>Connor's Home Page</Navbar.Brand>
       <Nav className="me-auto">
@@ -41,17 +42,20 @@ function Footer() {
 function App() {
   return (
   <Router>
-    <Navigation/>
-    <div className='background'>
-    <Container className='content'>
-      <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/home' element={<Home/>}></Route>
-        <Route path='/portfolio' element={<Portfolio/>}></Route>
-      </Routes>
-    </Container>
+    <div className='page'>
+      <Navigation/>
+      <div className='background'>
+        <div className='content'>
+          <Routes>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='/home' element={<Home/>}></Route>
+            <Route path='/portfolio' element={<Portfolio/>}></Route>
+          </Routes>
+        </div>
+        <div className='buffer'/>
+      </div>
+      <Footer/>
     </div>
-    <Footer/>
   </Router>
   );
 }

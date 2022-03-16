@@ -1,19 +1,38 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons";
 
-.background {
-    background-image: url(res/background.jpg);
-    background-position: top center;
-    height: 100vh;
-    display: flex;
+.page {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
 }
 
-.content {
+.page .navbar {
+  flex: 0 0 auto;
+}
+
+.page .background {
+    background-image: url(res/background.jpg);
+    background-position: top center;
+    flex: 1 0 auto;
+    
+    display: flex;
+    flex-flow: column;
+}
+
+.background .content {
     background: rgba(white, 0.8);
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: auto;
     padding: 10px 10px 5px;
-    // align-self: center;
+    flex: 0 0 auto;
+}
+
+.background .buffer {
+  flex: 1 1 20px;
+}
+
+.page .footer {
+  flex: 0 0 auto;
 }
